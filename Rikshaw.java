@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Write a description of class Rikshaw here.
  *
- * @author (your name)
+ * @prasun
  * @version (a version number or a date)
  */
 public class Rikshaw
@@ -14,33 +14,49 @@ public class Rikshaw
         System.out.println("What is the distance?");
         int distance = input.nextInt();
         System.out.println("Are you a local?\n 1 for yes, 0 for no");
-        int answer=input.nextInt();
+        int ans=input.nextInt();
         boolean local;
         boolean day;
-        if(answer == 1)
+        if(ans == 1)
         {
             local=true;
         }
-        else;
+        else
         {
             
             local=false;
         }
         System.out.println("Its day or night?\n 1 for day, 0 for night");
-        int answer1= input.nextInt();
-        if(answer1==1)
+        int ans1= input.nextInt();
+        if(ans1==1)
         {
             day = true;
         }
-        else;
+        else
         {
             day= false;
         }
-        float price_multiplier=1;
-        float price_multiplier= 1.5f;
+        float price_multiplier=0;
+        float price_multiplier1= 0;
         if(day)
         {
             price_multiplier =1;
         }
+        else
+        {
+            price_multiplier= 1.5f;
+        }
+        if (local)
+        {
+            price_multiplier1=0.5f;
+        }
+        else
+        {
+            price_multiplier1=1;
+        }
+        int base_fare= 20;
+        double fare=(((distance-1)*5)+ base_fare)*price_multiplier * price_multiplier1;
+        System.out.println("Total fare:Rs"+fare);
     }
-}
+
+} 
